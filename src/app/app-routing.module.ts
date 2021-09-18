@@ -11,6 +11,12 @@ const routes: Routes = [
       ),
   },
 
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./Pages/auth/auth.module').then((m) => m.AuthModule),
+  },
+
   //localhost:4200/admin
   {
     path: 'admin',
@@ -19,6 +25,7 @@ const routes: Routes = [
         (m) => m.AdminTemplateModule
       ),
   },
+
   //PageNotFound
   {
     path: '**',

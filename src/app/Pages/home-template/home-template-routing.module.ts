@@ -13,13 +13,30 @@ const routes: Routes = [
         loadChildren: () =>
           import('./home/home.module').then((m) => m.HomeModule),
       },
-      //ListCourse
+
+      //List Course
       {
         path: 'list-course',
         loadChildren: () =>
           import('./list-course/list-course.module').then(
             (m) => m.ListCourseModule
           ),
+      },
+
+      //Detail Course
+      {
+        path: 'detail/:id',
+        loadChildren: () =>
+          import('./detail-course/detail-course.module').then(
+            (m) => m.DetailCourseModule
+          ),
+      },
+
+      //Register
+      {
+        path: 'register',
+        loadChildren: () =>
+          import('./register/register.module').then((m) => m.RegisterModule),
       },
     ],
   },
