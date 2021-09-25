@@ -13,16 +13,18 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {}
 
   login(user: any) {
-    this.data.loginUser(user).subscribe((result: any) => {
-      if (result.maLoaiNguoiDung === 'GV') {
-        localStorage.setItem('UserAdmin', JSON.stringify(result));
-        console.log(result);
+    this.data
+      .post('QuanLyNguoiDung/DangNhap', user)
+      .subscribe((result: any) => {
+        if (result.maLoaiNguoiDung === 'GV') {
+          localStorage.setItem('UserAdmin', JSON.stringify(result));
+          console.log(result);
 
-        //Chuyển hướng qua trang Dashboard
-        this.router.navigate(['/admin/dashboard']);
-      } else {
-        alert('Tài khoản không có quyền truy cập');
-      }
-    });
+          //Chuyển hướng qua trang Dashboard
+          this.router.navigate(['/admin/dashboard']);
+        } else {
+          alert('Tài khoản không có quyền truy cập');
+        }
+      });
   }
 }

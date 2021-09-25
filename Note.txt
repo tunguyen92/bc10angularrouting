@@ -64,3 +64,15 @@ link repo: https://github.com/dpnguyen53/bc10angularrouting
 ======= Buoi 7 =======
 - Guard
 - JWT
+- Guard: CanActivate
+- JWT
+- Refactor Service
+- CanDeactivate: ng g guard name
+- Pipes
+- Lifecycle
+
+======= Buoi 8 =======
+- BehaviorSubject
+- SharingModules
+- Angular Material
+- Alias

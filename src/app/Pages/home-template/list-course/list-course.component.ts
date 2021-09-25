@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/_core/services/data.service';
+import { DataService } from '@services/data.service';
 
 @Component({
   selector: 'app-list-course',
@@ -16,9 +16,11 @@ export class ListCourseComponent implements OnInit {
   }
 
   getCourse() {
-    this.data.getListCourse().subscribe((result: any) => {
-      // console.log(result);
-      this.listCourse = result;
-    });
+    this.data
+      .get('QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01')
+      .subscribe((result: any) => {
+        // console.log(result);
+        this.listCourse = result;
+      });
   }
 }
